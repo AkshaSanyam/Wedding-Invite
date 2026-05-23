@@ -1150,7 +1150,7 @@
     </audio>
 
     <!-- The Mute Button -->
-    <button onclick="toggleMute()" id="muteBtn">Unmute</button>
+    <button onclick="toggleAudio()" id="muteBtn">Unmute</button>
 
     <script>
 
@@ -1215,21 +1215,21 @@
             document.getElementById('envelopeReveal').classList.remove('show');
             document.getElementById('envelopeReveal').classList.add('hidden');
             document.getElementById('main').classList.add('visible');
+            document.getElementById("muteBtn").style.display = "block";
             var audio = document.getElementById("mySong");
             audio.play();
           
-
         }
             const audio = document.getElementById("mySong");
             const btn = document.getElementById("muteBtn");
 
-        function toggleMute() {
-            if (audio.paused) {
-                audio.play();
-                btn.innerHTML = "Mute";
-                } else {
-                audio.pause();
-                btn.innerHTML = "Unmute";
+        function toggleAudio() {
+              if (audio.paused) {
+                    audio.play();
+                    btn.innerHTML = "Mute";
+                    } else {
+                    audio.pause();
+                    btn.innerHTML = "Play";
                 }
         }
         function setupScratchCards() {

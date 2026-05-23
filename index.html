@@ -1048,10 +1048,10 @@
     </div>
 
     <!-- ENVELOPE REVEAL -->
-    <div id="envelopeReveal">
+    <div id="envelopeReveal" onclick="goToMain()">
         <div class="envelope-reveal-container">
-            <img id="envelopeOpenImg" class="envelope-open-img" onclick="goToMain()" alt="Envelope Open">
-            <button class="continue-btn" onclick="goToMain()">Tap to Continue →</button>
+            <img id="envelopeOpenImg" class="envelope-open-img"  alt="Envelope Open">
+            <button class="continue-btn" >Tap to Continue →</button>
         </div>
     </div>
 
@@ -1179,7 +1179,7 @@
         const eventData = [
             // { name: 'Mehendi', date: 'March 18, 2028', time: '5:00 PM - 10:00 PM', image: 'mehendi' },
             { name: 'Haldi', date: 'March 19, 2028', time: '10:00 AM - 1:00 PM', image: 'haldi' },
-            { name: 'Baarat', date: 'March 19, 2028', time: '6:00 PM - 11:00 PM', image: 'baarat' },
+            { name: 'Baarat', date: 'July 8, 2025', time: '6:00 PM - 11:00 PM', image: 'baarat' },
             { name: 'Wedding', date: 'March 20, 2028', time: '9:00 PM onwards', image: 'wedding' },
             { name: 'Reception', date: 'March 20, 2028', time: '11:00 PM onwards', image: 'reception' }
         ];
@@ -1204,6 +1204,10 @@
         function openEnvelope() {
             document.getElementById('lockScreen').classList.add('hidden');
             document.getElementById('envelopeReveal').classList.add('show');
+            var audio = document.getElementById("mySong");
+            audio.play();
+
+            document.getElementById("muteBtn").style.display = "block";
             
             envelopeTimer = setTimeout(() => {
                 goToMain();
@@ -1216,9 +1220,7 @@
             document.getElementById('envelopeReveal').classList.add('hidden');
             document.getElementById('main').classList.add('visible');
             document.getElementById("muteBtn").style.display = "block";
-            var audio = document.getElementById("mySong");
-            audio.play();
-          
+                      
         }
             const audio = document.getElementById("mySong");
             const btn = document.getElementById("muteBtn");
@@ -1226,10 +1228,10 @@
         function toggleAudio() {
               if (audio.paused) {
                     audio.play();
-                    btn.innerHTML = "Mute";
+                    btn.innerHTML = "Pause Music";
                     } else {
                     audio.pause();
-                    btn.innerHTML = "Play";
+                    btn.innerHTML = "Play Music";
                 }
         }
         function setupScratchCards() {

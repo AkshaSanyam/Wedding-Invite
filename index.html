@@ -1122,6 +1122,9 @@
         Your browser does not support the audio element.
     </audio>
 
+    <!-- The Mute Button -->
+    <button onclick="toggleMute()" id="muteBtn">Unmute</button>
+
     <script>
                 
         const IMAGES = {
@@ -1186,9 +1189,21 @@
             document.getElementById('main').classList.add('visible');
             var audio = document.getElementById("mySong");
             audio.play();
+          
 
         }
+            const audio = document.getElementById("myAudio");
+            const btn = document.getElementById("muteBtn");
 
+        function toggleMute() {
+            if (audio.paused) {
+                audio.play();
+                btn.innerHTML = "Mute";
+                } else {
+                audio.pause();
+                btn.innerHTML = "Unmute";
+                }
+        }
         function setupScratchCards() {
             ['card1', 'card2', 'card3'].forEach(id => {
                 const card = document.getElementById(id);

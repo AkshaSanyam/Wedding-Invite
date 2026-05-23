@@ -1117,7 +1117,13 @@
         </div>
     </div>
 
+    <audio id="mySong">
+        <source src="Sampleaavan.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
+                
         const IMAGES = {
             envelope_closed: 'images/image_1.png',
             envelope_open: 'images/image_2.png',
@@ -1178,6 +1184,9 @@
             document.getElementById('envelopeReveal').classList.remove('show');
             document.getElementById('envelopeReveal').classList.add('hidden');
             document.getElementById('main').classList.add('visible');
+            var audio = document.getElementById("mySong");
+            audio.play();
+
         }
 
         function setupScratchCards() {

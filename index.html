@@ -202,7 +202,7 @@
         }
 
         #muteBtn {
-            position: none;
+            position: fixed;
             top: 20px;
             right: 20px;
             z-index: 5000;
@@ -221,6 +221,8 @@
             backdrop-filter: blur(10px);
 
             transition: all 0.3s ease;
+
+            display: none; /* hidden initially */
         }
 
 #muteBtn:hover {
@@ -1204,9 +1206,10 @@
         function openEnvelope() {
             document.getElementById('lockScreen').classList.add('hidden');
             document.getElementById('envelopeReveal').classList.add('show');
+            
             var audio = document.getElementById("mySong");
             audio.play();
-
+            btn.innerHTML = "Pause Music";
             document.getElementById("muteBtn").style.display = "block";
             
             envelopeTimer = setTimeout(() => {

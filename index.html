@@ -567,11 +567,23 @@
 }
 
 .venue-banner-label{
-    font-size:.75rem;
+    font-family:'Cormorant', serif;
+    font-size:1.2rem;
+    font-weight:600;
+    color:var(--gold);
     text-transform:uppercase;
     letter-spacing:2px;
-    color:var(--gold);
-    margin-bottom:.35rem;
+    margin-bottom:.6rem;
+    position:relative;
+}
+
+.venue-banner-label::after{
+    content:"";
+    display:block;
+    width:50px;
+    height:2px;
+    background:var(--gold);
+    margin:.35rem auto 0;
 }
 
 .venue-banner-name{
@@ -636,7 +648,7 @@
 .event-card{
     background:linear-gradient(180deg,#fff,#fdfaf7);
     border-radius:18px;
-    padding:0.9rem 1.3rem 0.7rem;   /* Top Right/Left Bottom */
+    padding:0.85rem 1.25rem 0.55rem;   /* Top Right/Left Bottom */
     margin-bottom:0.8rem;
     cursor:pointer;
     transition:.35s;
@@ -667,7 +679,7 @@
 
     color:var(--dark-brown);
 
-    margin-bottom:.8rem;
+    margin-bottom:.2rem;
 
 }
 
@@ -677,7 +689,7 @@
 
     text-align:center;
 
-    margin-bottom:1rem;
+    margin-bottom:.15rem;
 
 }
 
@@ -703,7 +715,7 @@
 
     text-align:center;
 
-    line-height:1.6;
+    line-height:1.2;
 
 }
 

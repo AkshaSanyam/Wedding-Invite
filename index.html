@@ -13,6 +13,7 @@
         }
 
         @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;600;700&family=Lora:wght@300;400;500;600&display=swap');
+
         :root {
             --gold: #c4933f;
             --rose: #c97a7a;
@@ -230,6 +231,7 @@
             font-size: 18px;
 
             box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+
             transition: all 0.3s ease;
             animation: pulseMusic 2.5s infinite;
         }
@@ -245,4 +247,1532 @@
 
         @keyframes pulseMusic {
             0%, 100% {
-                box-
+                box-shadow: 0 0 15px rgba(255,255,255,0.15);
+            }
+            50% {
+                box-shadow: 0 0 25px rgba(255,255,255,0.35);
+            }
+        }
+
+        .groom-name, .bride-name {
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--dark-brown);
+            letter-spacing: 1px;
+        }
+
+        .groom-family, .bride-family {
+            font-size: 0.9rem;
+            color: var(--brown);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .ampersand {
+            font-family: 'Cormorant', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            margin: 0.5rem 0;
+        }
+
+        .scroll-hint {
+            margin-top: 2rem;
+            font-size: 0.95rem;
+            color: var(--rose);
+            letter-spacing: 1px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        /* SAVE THE DATE */
+        .save-date-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            background-color: var(--light-bg) !important;
+        }
+
+        .section-title {
+            font-family: 'Cormorant', serif;
+            font-size: 2.8rem;
+            color: var(--dark-brown);
+            margin-bottom: 0.5rem;
+            letter-spacing: 1px;
+        }
+
+        .section-title .highlight {
+            color: var(--rose);
+        }
+
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: var(--brown);
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .scratch-cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .scratch-card {
+            width: 100px;
+            height: 140px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--teal) 0%, #4a8a7f 100%);
+            border: 3px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: white;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            user-select: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            touch-action: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .scratch-card:hover {
+            transform: translateY(-8px) scale(1.05);
+            box-shadow: 0 20px 50px rgba(90, 155, 143, 0.35);
+            border-color: #d4af37;
+        }
+
+        .scratch-card:active {
+            transform: translateY(-3px) scale(0.98);
+        }
+
+        .scratch-card canvas {
+            position: absolute;
+            cursor: pointer;
+            z-index: 10;
+            touch-action: none;
+        }
+
+        .scratch-text {
+            position: relative;
+            z-index: 5;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-weight: 700;
+        }
+
+        .scratch-card.revealed .scratch-text {
+            opacity: 1;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .timer-box {
+            text-align: center;
+        }
+
+        .timer-number {
+            font-family: 'Cormorant', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--rose);
+        }
+
+        .timer-label {
+            font-size: 0.8rem;
+            color: var(--brown);
+            letter-spacing: 1px;
+            margin-top: 0.3rem;
+        }
+
+        .timer-sep {
+            font-size: 1.5rem;
+            color: var(--gold);
+        }
+
+        /* OUR STORY */
+        .story-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+            text-align: center;
+            background-color: var(--light-bg) !important;
+        }
+
+        .story-subtitle {
+            font-size: 0.9rem;
+            color: var(--brown);
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .story-stack-container {
+            position: relative;
+            height: 550px;
+            max-width: 500px;
+            margin: 0 auto 1rem;
+        }
+
+        .story-card {
+            position: absolute;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            text-align: center;
+            opacity: 0;
+            transition: all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            cursor: pointer;
+        }
+
+        .story-card.active {
+            opacity: 1;
+            z-index: 10;
+            animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 30px 80px rgba(201, 122, 122, 0.25);
+        }
+
+        .story-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 35px 100px rgba(90, 155, 143, 0.3);
+        }
+
+        .story-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: all 0.4s ease;
+        }
+
+        .story-card:hover .story-image {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        .story-label {
+            font-family: 'Cormorant', serif;
+            font-size: 1.3rem;
+            color: var(--teal);
+            margin-bottom: 0.8rem;
+        }
+
+        .story-description {
+            font-size: 1rem;
+            color: var(--brown);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
+        .story-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .story-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .story-nav-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: white;
+            border: 2px solid var(--teal);
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--teal);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 5px 15px rgba(90, 155, 143, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .story-nav-btn::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--teal), #4a8a7f);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: -1;
+        }
+
+        .story-nav-btn:hover {
+            background: var(--teal);
+            color: white;
+            transform: scale(1.15) translateY(-5px);
+            box-shadow: 0 15px 40px rgba(90, 155, 143, 0.35);
+        }
+
+        .story-nav-btn:active {
+            transform: scale(0.95);
+        }
+
+        /* SACRED CEREMONIES */
+        .ceremonies-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            background-color: var(--light-bg) !important;
+        }
+
+        .ceremonies-title {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .event-tabs {
+            display: none;
+        }
+
+        /* ================= CEREMONIES ================= */
+
+#eventContents{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(320px,1fr));
+    gap:2rem;
+    margin-top:2rem;
+}
+
+.ceremony-venue-banner{
+    max-width:420px;
+    margin:1.5rem auto 2.5rem;
+    padding:1rem 2rem;
+    background:linear-gradient(180deg,#fff,#fdfaf7);
+    border:1px solid rgba(196,147,63,.18);
+    border-radius:18px;
+    text-align:center;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+}
+
+.venue-banner-label{
+    font-size:.75rem;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    color:var(--gold);
+    margin-bottom:.35rem;
+}
+
+.venue-banner-name{
+    font-family:'Cormorant',serif;
+    font-size:1.6rem;
+    color:var(--dark-brown);
+}
+
+.day-panel{
+
+    background:white;
+
+    border-radius:22px;
+
+    padding:2rem;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+
+    border:1px solid rgba(196,147,63,.18);
+
+    transition:.35s;
+}
+
+.day-panel:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+}
+
+.day-header{
+
+    font-family:'Cormorant',serif;
+
+    font-size:2rem;
+
+    color:var(--dark-brown);
+
+    text-align:center;
+
+    letter-spacing:1px;
+
+}
+
+.day-divider{
+
+    width:80px;
+
+    height:2px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        var(--gold),
+        transparent
+    );
+
+    margin:1rem auto 2rem;
+}
+
+.event-card{
+
+    background:linear-gradient(
+        180deg,
+        #fff,
+        #fdfaf7
+    );
+
+    border-radius:18px;
+
+    padding:1.5rem;
+
+    margin-bottom:1rem;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+    border:1px solid rgba(196,147,63,.12);
+
+}
+
+.event-card:last-child{
+
+    margin-bottom:0;
+
+}
+
+.event-card:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:0 12px 35px rgba(90,155,143,.15);
+
+}
+
+.event-title{
+
+    font-family:'Cormorant',serif;
+
+    font-size:1.7rem;
+
+    text-align:center;
+
+    color:var(--dark-brown);
+
+    margin-bottom:.8rem;
+
+}
+
+.event-time{
+
+    color:var(--rose);
+
+    text-align:center;
+
+    margin-bottom:1rem;
+
+}
+
+.event-venue-label{
+
+    font-size:.72rem;
+
+    text-transform:uppercase;
+
+    letter-spacing:2px;
+
+    color:var(--gold);
+
+    text-align:center;
+
+    margin-bottom:.3rem;
+
+}
+
+.event-venue{
+
+    color:var(--brown);
+
+    text-align:center;
+
+    line-height:1.6;
+
+}
+
+        /* CEREMONY ANIMATIONS */
+        .ceremony-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 1999;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .ceremony-overlay.active {
+            animation: fadeOutOverlay 4.5s ease-out forwards;
+        }
+
+        @keyframes fadeOutOverlay {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 2rem;
+            color: #27ae60;
+            opacity: 0;
+            animation: floatHeart 4.5s ease-out forwards;
+        }
+
+        @keyframes floatHeart {
+            0% {
+                opacity: 0.6;
+                transform: translateY(100vh) scale(0.5);
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) scale(1);
+            }
+        }
+
+        /* HALDI - YELLOW FLOWERS */
+        .flower {
+            position: absolute;
+            font-size: 1.8rem;
+            color: #f1c40f;
+            opacity: 0;
+            animation: floatFlower 4.5s ease-out forwards;
+        }
+
+        @keyframes floatFlower {
+            0% {
+                opacity: 0.6;
+                transform: translateY(100vh) rotateZ(0deg) scale(0.3);
+            }
+            50% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100vh) rotateZ(360deg) scale(1);
+            }
+        }
+
+        /* SANGEET - SPARKLES */
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, #fff, #ffd700);
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkleAnimation 4.5s ease-out forwards;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.8);
+        }
+
+        @keyframes sparkleAnimation {
+            0% {
+                opacity: 0.9;
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(0.1);
+            }
+        }
+
+        /* Phera - ROSE PETALS */
+        .petal {
+            position: absolute;
+            font-size: 1.5rem;
+            color: #e74c3c;
+            opacity: 0;
+            animation: floatPetal 4.5s ease-out forwards;
+        }
+
+        @keyframes floatPetal {
+            0% {
+                opacity: 0.7;
+                transform: translateY(-100vh) translateX(0) rotateZ(0deg);
+            }
+            50% {
+                opacity: 0.8;
+                transform: translateY(50vh) translateX(100px) rotateZ(180deg);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(100vh) translateX(200px) rotateZ(360deg);
+            }
+        }
+
+        /* Dinner - SHIMMER */
+        .shimmer {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: radial-gradient(circle, #fff, #e8d4f1);
+            border-radius: 50%;
+            opacity: 0;
+            animation: shimmerAnimation 4.5s ease-out forwards;
+            box-shadow: 0 0 8px rgba(232, 212, 241, 0.9);
+        }
+
+        @keyframes shimmerAnimation {
+            0% {
+                opacity: 0.9;
+                transform: translate(0, 0) scale(1);
+                filter: brightness(1.5);
+            }
+            50% {
+                opacity: 0.7;
+                filter: brightness(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(0.2);
+                filter: brightness(0.5);
+            }
+        }
+
+        /* EVENT MODAL */
+        #eventModal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            z-index: 2000;
+            align-items: flex-start;
+            justify-content: center;
+            padding-top: 1rem;
+            overflow-y: auto;
+        }
+
+        #eventModal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2001;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: white;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            z-index: 2002;
+        }
+
+        .modal-label {
+            font-size: 0.9rem;
+            color: var(--brown);
+            letter-spacing: 1px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .modal-close {
+            width: 40px;
+            height: 40px;
+            background: var(--gold);
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.5rem;
+            color: white;
+            flex-shrink: 0;
+            margin-left: 1rem;
+            position: relative;
+            z-index: 2003;
+        }
+
+        .modal-close:hover {
+            background: var(--brown);
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 2001;
+        }
+
+        /* VENUE */
+        .venue-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            background-color: var(--light-bg) !important;
+        }
+
+        .venue-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .venue-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 90px rgba(90, 155, 143, 0.25);
+        }
+
+        .venue-map {
+            width: 100%;
+            height: 300px;
+            border: none;
+            display: block;
+            transition: all 0.4s ease;
+        }
+
+        .venue-card:hover .venue-map {
+            filter: brightness(1.05);
+        }
+
+        .venue-info {
+            padding: 2rem;
+        }
+
+        .venue-title {
+            font-family: 'Cormorant', serif;
+            font-size: 1.5rem;
+            color: var(--dark-brown);
+            margin-bottom: 0.8rem;
+            transition: color 0.3s ease;
+        }
+
+        .venue-card:hover .venue-title {
+            color: var(--rose);
+        }
+
+        .venue-text {
+            color: var(--brown);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .venue-button {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            background: var(--dark-brown);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            font-weight: 600;
+            box-shadow: 0 5px 20px rgba(92, 61, 31, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .venue-button::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .venue-button:hover {
+            background: var(--brown);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 40px rgba(92, 61, 31, 0.4);
+        }
+
+        .venue-button:hover::before {
+            transform: translateX(100%);
+        }
+
+        .venue-button:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        /* RSVP */
+        .rsvp-section {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            text-align: center;
+            background-color: var(--light-bg) !important;
+        }
+
+        .rsvp-text {
+            color: var(--brown);
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+
+        .rsvp-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #25d366, #20a853);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            position: relative;
+            overflow: hidden;
+            animation: slideInUp 0.6s ease-out 0.2s backwards;
+        }
+
+        .rsvp-button::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .rsvp-button:hover {
+            transform: translateY(-5px) scale(1.08);
+            box-shadow: 0 15px 50px rgba(37, 211, 102, 0.5);
+        }
+
+        .rsvp-button:hover::before {
+            transform: translateX(100%);
+        }
+
+        .rsvp-button:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        /* CLOSING */
+        .closing-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--dark-brown) 0%, var(--brown) 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .closing-heart {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: bounce 1.5s ease-in-out infinite;
+        }
+
+        .closing-title {
+            font-family: 'Cormorant', serif;
+            font-size: clamp(2rem, 8vw, 3.5rem);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .closing-date {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .groom-name, .bride-name { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
+            .scratch-card { width: 85px; height: 120px; }
+            .story-image { height: 250px; }
+            #eventContents{
+
+    grid-template-columns:1fr;
+
+}
+
+.day-panel{
+
+    padding:1.5rem;
+
+}
+        }
+
+        .venue-highlight{
+
+    animation: venueGlow 1.8s ease;
+
+}
+
+@keyframes venueGlow{
+
+    0%{
+
+        transform:scale(1);
+
+        box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+    }
+
+    35%{
+
+        transform:scale(1.03);
+
+        box-shadow:
+            0 0 0 8px rgba(196,147,63,.12),
+            0 25px 70px rgba(196,147,63,.35);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+    }
+
+}
+
+    </style>
+</head>
+<body>
+    <!-- PETALS -->
+    <div class="petals">
+        <div class="petal" style="left: 10%; top: 20%;">🌸</div>
+        <div class="petal" style="left: 20%; top: 40%; animation-delay: 1s;">🌹</div>
+        <div class="petal" style="left: 30%; top: 10%; animation-delay: 2s;">🌸</div>
+        <div class="petal" style="left: 70%; top: 30%; animation-delay: 0.5s;">🌹</div>
+        <div class="petal" style="left: 80%; top: 50%; animation-delay: 1.5s;">🌸</div>
+    </div>
+
+    <!-- LOCK SCREEN -->
+    <div id="lockScreen">
+        <img id="envelopeImg" class="envelope-img" onclick="openEnvelope()" alt="Wedding Envelope">
+    </div>
+
+    <!-- ENVELOPE REVEAL -->
+    <div id="envelopeReveal" onclick="goToMain()">
+        <div class="envelope-reveal-container">
+            <img id="envelopeOpenImg" class="envelope-open-img"  alt="Envelope Open">
+            <button class="continue-btn" >Tap to Continue →</button>
+        </div>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-quote">"With the blessings of our families, we joyfully celebrate the wedding of"</div>
+            <div class="hero-names">
+                <div class="groom-name">Sanyam</div>
+                <div class="groom-family">S/o Smt. Kusum Bhutoria - Late Shri Mahender Singh Ji Bhutoria <br>
+                    Grandson of Smt. Pana Devi- Late Shri Tarachand ji Bhutoria</div>
+                <div class="ampersand">&</div>
+                <div class="bride-name">Aksha</div>
+                <div class="bride-family">D/o Smt. Ansuya Agarwal - Shahji Shri Pavan Ji Agarwal <br>
+                    Grand daughter of Smt. Sulochana Devi - Late Shri Gajanand Agarwal</div>
+            </div>
+            <div class="scroll-hint">↓ SCROLL TO REVEAL</div>
+        </section>
+
+        <!-- SAVE THE DATE -->
+        <section class="save-date-section">
+            <h2 class="section-title">Save the <span class="highlight">Date</span></h2>
+            <p class="section-subtitle">SCRATCH BELOW TO REVEAL OUR WEDDING DATE</p>
+            <div class="scratch-cards-container">
+                <div class="scratch-card" id="card1" data-value="July"><canvas></canvas><div class="scratch-text">July</div></div>
+                <div class="scratch-card" id="card2" data-value="08"><canvas></canvas><div class="scratch-text">08</div></div>
+                <div class="scratch-card" id="card3" data-value="2026"><canvas></canvas><div class="scratch-text">2026</div></div>
+            </div>
+            <div class="countdown-timer" id="countdownTimer"></div>
+        </section>
+
+        <!-- OUR STORY -->
+        <section class="story-section" style="display: none;">
+            <h2 class="section-title">Our <span class="highlight">Story</span></h2>
+            <p class="story-subtitle">Glimpses from our Engagement !!</p>
+            <div class="story-stack-container" id="storyContainer"></div>
+            <div class="story-nav">
+                <button class="story-nav-btn" onclick="prevStory()">❮</button>
+                <button class="story-nav-btn" onclick="nextStory()">❯</button>
+            </div>
+        </section>
+
+        <!-- SACRED CEREMONIES -->
+        <section class="ceremonies-section">
+
+        <div class="ceremonies-title">
+        <h2 class="section-title">
+            Sacred <span class="highlight">Ceremonies</span>
+        </h2>
+        </div>
+
+    <div class="ceremony-venue-banner">
+        <div class="venue-banner-label">Venue</div>
+        <div class="venue-banner-name">Vatsalya Guest House</div>
+    </div>
+
+    <div id="eventContents"></div>
+
+</section>
+
+        <!-- VENUE -->
+        <section class="venue-section">
+            <h2 class="section-title">Venue</h2>
+            <div class="venue-card" id="venue-vatsalya">
+                <iframe class="venue-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.3618300981852!2d78.46064997686793!3d17.44238760121494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90bb372a94c3%3A0x33a80ea6419f00a3!2sVatsalya%20Guest%20House!5e0!3m2!1sen!2sus!4v1779584897208!5m2!1sen!2sus"></iframe>
+                <div class="venue-info">
+                    <h3 class="venue-title">Vatsalya Guesthouse</h3>
+                    <p class="venue-text">Secunderabad, Telengana<br>India</p>
+                    <a href="https://maps.app.goo.gl/k6NXLm3XQ3AbEptC6" target="_blank" class="venue-button">Open in Google Maps →</a>
+                </div>
+            </div>    
+            <!--
+            <div class="venue-card" id="venue-greenpark">
+                <iframe class="venue-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7612.984627532231!2d78.4512333768678!3d17.43613520139567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90a6ae789aab%3A0x9d2b3c7a1c90042d!2sHotel%20Greenpark%2C%20Hyderabad!5e0!3m2!1sen!2sus!4v1779510117738!5m2!1sen!2sus"></iframe>
+                <div class="venue-info">
+                    <h3 class="venue-title">Hotel Greenpark</h3>
+                    <p class="venue-text">Secunderabad, Telengana<br>India</p>
+                    <a href="https://maps.app.goo.gl/htmufFpxsUGe9a72A" target="_blank" class="venue-button">Open in Google Maps →</a>
+                </div>
+            </div>
+        -->
+            */
+        </section>
+
+        <!-- RSVP -->
+        <section class="rsvp-section">
+            <h2 class="section-title">Contact</h2>
+            <p class="rsvp-text">Your gracious presence & warm blessings will make this ocassion even more memorable.</p>
+            <a href="https://wa.me/+918088205960?text=Hello%20Sanyam%20%26%20Aksha,%20I%20would%20like%20to%20attend%20your%20wedding!" class="rsvp-button"><span>💬</span> WhatsApp Us</a>
+        </section>
+
+        <!-- CLOSING -->
+        <section class="closing-section">
+            <div>
+                <div class="closing-heart">💕</div>
+                <h2 class="closing-title">Together Forever</h2>
+                <p class="closing-date">July 8, 2026</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- CEREMONY ANIMATION OVERLAY -->
+    <div id="ceremonyOverlay" class="ceremony-overlay"></div>
+
+    <!-- EVENT MODAL -->
+    <div id="eventModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-label" id="modalLabel"></div>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <img id="modalImage" class="modal-image">
+        </div>
+    </div>
+
+    <audio id="mySong">
+        <source src="Sampleaavan.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- The Mute Button -->
+    <button onclick="toggleAudio()" id="musicBtn" aria-label="Music Toggle">
+    <span id="musicIcon">▶</span>
+    </button>
+
+    <script>
+
+                
+        const IMAGES = {
+            envelope_closed: 'images/image_1.png',
+            envelope_open: 'images/image_2.png',
+            mehendi: 'images/image_3.jpg',
+            haldi: 'images/image_4.jpg',
+            baraat: 'images/image_5.jpg',
+            phera: 'images/image_6.jpg',
+            dinner: 'images/image_7.jpg',
+            photo1: 'images/image_8.jpg',
+            photo2: 'images/image_9.jpg',
+            photo3: 'images/image_10.jpg',
+            photo4: 'images/image_11.jpg',
+        };
+
+        const storyData = [
+            { label: 'First Real Date', description: 'Coffee turned into dinner, dinner turned into hours — we didn\'t want the night to end.', image: 'photo1' },
+            { label: 'A Special Moment', description: 'Every moment with you feels like a story I never want to end. I think I love you.', image: 'photo2' },
+            { label: 'Our Adventure', description: 'Life is a journey best traveled with someone you love.', image: 'photo3' },
+            { label: 'Forever Starts Now', description: 'A lifetime of togetherness begins with one sacred step.', image: 'photo4' }
+        ];
+
+        const eventData = [
+{
+    day: "8 July 2026",
+    events: [
+
+        {
+            name: "Breakfast",
+            time: "8:30 - 10:00 AM",
+            venue: "Vatsalya Guest House",
+            venueId: "venue-vatsalya"
+        },
+
+        {
+            name: "Moong Bakherna",
+            time: "9:15 AM",
+            venue: "Vatsalya Guest House",
+            venueId: "venue-vatsalya"
+        },
+
+        {
+            name: "Mahendi",
+            time: "10:00 AM - 12:00 PM",
+            venue: "Vatsalya Guest House",
+            venueId: "venue-vatsalya"
+        },
+
+        {
+            name: "Lunch",
+            time: "12:30 PM - 1:30 PM",
+            venue: "Vatsalya Guest House",
+            venueId: "venue-vatsalya"
+        },
+
+        {
+            name: "Jhol",
+            time: "2:00 PM",
+            venue: "Vatsalya Guest House",
+            venueId: "venue-vatsalya"
+        },
+        
+        {
+            name: "High Tea",
+            time: "3:30 PM",
+            venue: "Vatsalya Guest House",
+            venueId: "venue-vatsalya"
+        },
+
+        {
+            name: "Baraat Prasthan",
+            time: "4:00 PM",
+            venue: "Vatsalya Guest House",
+            venueId: "venue-vatsalya"
+        },
+
+        /*
+            {
+            name: "Phera",
+            time: "6:31 PM",
+            venue: "Hotel Green Park",
+            venueId: "venue-greenpark"
+        },
+
+        {
+            name: "Dinner",
+            time: "8:00 PM onwards",
+            venue: "Hotel Green Park",
+            venueId: "venue-greenpark"
+        }
+        */
+    ]
+},
+
+{
+    day: "9 July 2026",
+    events: [
+
+        {
+            name: "Breakfast",
+            time: "8:00 AM",
+            venue: "Vatsalya Guest House",
+            venueId: "venue-vatsalya"
+        },
+
+        {
+            name: "Pag Pakdai and Juaa Jui",
+            time: "8:00 AM",
+            venue: "Vatsalya Guest House",
+            venueId: "venue-vatsalya"
+        },
+
+        {
+            name: "Lunch",
+            time: "12:00 to 2:00 PM",
+            venue: "Vatsalya Guest House",
+            venueId: "venue-vatsalya"
+        },
+
+        {
+            name: "High Tea",
+            time: "5 PM",
+            venue: "Vatsalya Guest House",
+            venueId: "venue-vatsalya"
+        }
+
+    ]
+}
+];
+
+        let currentStory = 0;
+        let envelopeTimer = null;
+
+        function init() {
+            loadImages();
+            setupStory();
+            setupEvents();
+            setupScratchCards();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        }
+
+        function loadImages() {
+            document.getElementById('envelopeImg').src = IMAGES.envelope_closed;
+            document.getElementById('envelopeOpenImg').src = IMAGES.envelope_open;
+        }
+
+        function openEnvelope() {
+            document.getElementById('lockScreen').classList.add('hidden');
+            document.getElementById('envelopeReveal').classList.add('show');
+            
+            const audio = document.getElementById("mySong");
+            const btn = document.getElementById("musicBtn");
+            const icon = document.getElementById("musicIcon");
+
+            audio.play();
+
+            btn.style.display = "flex";
+            btn.classList.add("playing");
+            icon.textContent = "❚❚";
+
+           
+            envelopeTimer = setTimeout(() => {
+                goToMain();
+            }, 15000);
+        }
+
+        function goToMain() {
+            if (envelopeTimer) clearTimeout(envelopeTimer);
+            document.getElementById('envelopeReveal').classList.remove('show');
+            document.getElementById('envelopeReveal').classList.add('hidden');
+            document.getElementById('main').classList.add('visible');
+            document.getElementById('musicBtn').style.display = "flex";
+                      
+        }
+            const audio = document.getElementById("mySong");
+            const btn = document.getElementById("musicBtn");
+
+        function toggleAudio() {
+            const audio = document.getElementById("mySong");
+            const btn = document.getElementById("musicBtn");
+            const icon = document.getElementById("musicIcon");
+
+            if (audio.paused) {
+                audio.play();
+                btn.classList.add("playing");
+                icon.textContent = "❚❚";
+            } else {
+                audio.pause();
+                btn.classList.remove("playing");
+                icon.textContent = "▶";
+            }
+        }
+
+        function setupScratchCards() {
+            ['card1', 'card2', 'card3'].forEach(id => {
+                const card = document.getElementById(id);
+                const canvas = card.querySelector('canvas');
+                canvas.width = card.offsetWidth;
+                canvas.height = card.offsetHeight;
+                
+                const ctx = canvas.getContext('2d');
+                ctx.fillStyle = '#5a9b8f';
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 14px Arial';
+                ctx.textAlign = 'center';
+                ctx.textBaseline = 'middle';
+                ctx.fillText('SCRATCH', canvas.width / 2, canvas.height / 2 - 8);
+                
+                let isScratching = false;
+                const scratch = (e) => {
+                    if (!isScratching) return;
+                    const rect = canvas.getBoundingClientRect();
+                    const x = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+                    const y = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+                    
+                    ctx.clearRect(x - 15, y - 15, 30, 30);
+                    
+                    const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+                    let transparent = 0;
+                    for (let i = 3; i < data.length; i += 4) if (data[i] === 0) transparent++;
+                    
+                    if (transparent > canvas.width * canvas.height * 0.4) {
+                        canvas.style.display = 'none';
+                        card.classList.add('revealed');
+                        isScratching = false;
+                    }
+                };
+                
+                canvas.addEventListener('mousedown', () => isScratching = true);
+                canvas.addEventListener('mouseup', () => isScratching = false);
+                canvas.addEventListener('mousemove', scratch);
+                canvas.addEventListener('touchstart', () => isScratching = true);
+                canvas.addEventListener('touchend', () => isScratching = false);
+                canvas.addEventListener('touchmove', scratch);
+            });
+        }
+
+        function updateCountdown() {
+            const weddingDate = new Date('2026-07-08T18:31:00+05:30').getTime();
+            const diff = weddingDate - new Date().getTime();
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+            document.getElementById('countdownTimer').innerHTML = `
+                <div class="timer-box"><div class="timer-number">${days}</div><div class="timer-label">DAYS</div></div>
+                <div class="timer-sep">|</div>
+                <div class="timer-box"><div class="timer-number">${hours}</div><div class="timer-label">HOURS</div></div>
+                <div class="timer-sep">|</div>
+                <div class="timer-box"><div class="timer-number">${mins}</div><div class="timer-label">MINS</div></div>
+                <div class="timer-sep">|</div>
+                <div class="timer-box"><div class="timer-number">${secs}</div><div class="timer-label">SECS</div></div>
+            `;
+        }
+
+        function setupStory() {
+            const container = document.getElementById('storyContainer');
+            container.innerHTML = storyData.map((s, i) => `
+                <div class="story-card ${i === 0 ? 'active' : ''}">
+                    <div class="story-label">${s.label}</div>
+                    <div class="story-description">"${s.description}"</div>
+                    <img src="${IMAGES[s.image]}" class="story-image">
+                </div>
+            `).join('');
+
+            container.addEventListener('touchstart', e => { window.touchStart = e.touches[0].screenX; }, false);
+            container.addEventListener('touchend', e => {
+                const diff = window.touchStart - e.changedTouches[0].screenX;
+                if (diff > 50) nextStory();
+                else if (diff < -50) prevStory();
+            }, false);
+        }
+
+        function nextStory() {
+            const cards = document.querySelectorAll('.story-card');
+            cards[currentStory].classList.remove('active');
+            currentStory = (currentStory + 1) % cards.length;
+            cards[currentStory].classList.add('active');
+        }
+
+        function prevStory() {
+            const cards = document.querySelectorAll('.story-card');
+            cards[currentStory].classList.remove('active');
+            currentStory = (currentStory - 1 + cards.length) % cards.length;
+            cards[currentStory].classList.add('active');
+        }
+
+        function setupEvents() {
+
+    const container = document.getElementById("eventContents");
+
+    container.innerHTML = eventData.map(day => `
+
+        <div class="day-panel">
+
+            <div class="day-header">
+                ✦ ${day.day} ✦
+            </div>
+
+            <div class="day-divider"></div>
+
+            ${day.events.map(event => `
+
+                <div class="event-card"
+                     onclick="scrollToVenue('${event.venueId}')">
+
+                    <div class="event-title">
+                        ${event.name}
+                    </div>
+
+                    <div class="event-time">
+                        🕐 ${event.time}
+                    </div>
+                    
+                    <!--
+                    <div class="event-venue-label">
+                        Venue
+                    </div>>
+
+                    <div class="event-venue">
+                        ${event.venue}
+                    </div>
+                    -->
+
+                </div>
+
+            `).join("")}
+
+        </div>
+
+    `).join("");
+
+}
+
+        function openModal(i) {
+            const e = eventData[i];
+            document.getElementById('modalLabel').textContent = `DAY ${i+1} • ${e.name} • ${e.date}`;
+            document.getElementById('modalImage').src = IMAGES[e.image];
+            document.getElementById('eventModal').classList.add('active');
+
+            // Small delay to ensure modal and image are fully loaded/visible before animation
+            setTimeout(() => {
+                triggerCeremonyAnimation(i);
+            }, 300);
+        }
+
+        function triggerCeremonyAnimation(eventIndex) {
+            const overlay = document.getElementById('ceremonyOverlay');
+            overlay.innerHTML = '';
+            overlay.classList.remove('active');
+            
+            // Force reflow to restart animation
+            void overlay.offsetWidth;
+            overlay.classList.add('active');
+
+            const ceremonies = [
+                { name: 'mehendi', type: 'hearts', count: 12 },
+                { name: 'haldi', type: 'flowers', count: 10 },
+                { name: 'baraat', type: 'sparkles', count: 25 },
+                { name: 'phera', type: 'petals', count: 15 },
+                { name: 'dinner', type: 'shimmer', count: 20 }
+            ];
+
+            const ceremony = ceremonies[eventIndex];
+
+            if (ceremony.type === 'hearts') {
+                for (let i = 0; i < ceremony.count; i++) {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.textContent = '💚';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDelay = Math.random() * 1.5 + 's';
+                    overlay.appendChild(heart);
+                }
+            } else if (ceremony.type === 'flowers') {
+                for (let i = 0; i < ceremony.count; i++) {
+                    const flower = document.createElement('div');
+                    flower.className = 'flower';
+                    flower.textContent = '🌼';
+                    flower.style.left = Math.random() * 100 + '%';
+                    flower.style.animationDelay = Math.random() * 1.5 + 's';
+                    overlay.appendChild(flower);
+                }
+            } else if (ceremony.type === 'sparkles') {
+                for (let i = 0; i < ceremony.count; i++) {
+                    const sparkle = document.createElement('div');
+                    sparkle.className = 'sparkle';
+                    sparkle.style.left = Math.random() * 100 + '%';
+                    sparkle.style.top = Math.random() * 100 + '%';
+                    sparkle.style.setProperty('--tx', (Math.random() - 0.5) * 400 + 'px');
+                    sparkle.style.setProperty('--ty', (Math.random() - 0.5) * 400 + 'px');
+                    sparkle.style.animationDelay = Math.random() * 1 + 's';
+                    overlay.appendChild(sparkle);
+                }
+            } else if (ceremony.type === 'petals') {
+                for (let i = 0; i < ceremony.count; i++) {
+                    const petal = document.createElement('div');
+                    petal.className = 'petal';
+                    petal.textContent = '🌹';
+                    petal.style.left = Math.random() * 100 + '%';
+                    petal.style.animationDelay = Math.random() * 1.5 + 's';
+                    overlay.appendChild(petal);
+                }
+            } else if (ceremony.type === 'shimmer') {
+                for (let i = 0; i < ceremony.count; i++) {
+                    const shimmer = document.createElement('div');
+                    shimmer.className = 'shimmer';
+                    shimmer.style.left = Math.random() * 100 + '%';
+                    shimmer.style.top = Math.random() * 100 + '%';
+                    shimmer.style.setProperty('--tx', (Math.random() - 0.5) * 300 + 'px');
+                    shimmer.style.setProperty('--ty', (Math.random() - 0.5) * 300 + 'px');
+                    shimmer.style.animationDelay = Math.random() * 1.2 + 's';
+                    overlay.appendChild(shimmer);
+                }
+            }
+        }
+
+        function closeModal() {
+            document.getElementById('eventModal').classList.remove('active');
+            document.getElementById('ceremonyOverlay').innerHTML = '';
+            document.getElementById('ceremonyOverlay').classList.remove('active');
+        }
+
+        window.addEventListener('load', init);
+
+    function scrollToVenue(id) {
+
+        const venue = document.getElementById(id);
+
+        if (!venue) return;
+
+        venue.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        venue.classList.remove("venue-highlight");
+
+        // Restart animation
+        void venue.offsetWidth;
+
+        venue.classList.add("venue-highlight");
+
+        setTimeout(() => {
+            venue.classList.remove("venue-highlight");
+        }, 1800);
+    }
+
+    
+    </script>
+</body>
+</html>

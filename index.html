@@ -1183,19 +1183,19 @@
         <!-- VENUE -->
         <section class="venue-section">
             <h2 class="section-title">Venue</h2>
-            <div class="venue-card">
+            <div class="venue-card" id="venue-vatsalya">
                 <iframe class="venue-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3806.3618300981852!2d78.46064997686793!3d17.44238760121494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90bb372a94c3%3A0x33a80ea6419f00a3!2sVatsalya%20Guest%20House!5e0!3m2!1sen!2sus!4v1779584897208!5m2!1sen!2sus"></iframe>
                 <div class="venue-info">
                     <h3 class="venue-title">Baraat Venue</h3>
                     <p class="venue-text">Secunderabad, Telengana<br>India</p>
-                    <a href="https://maps.app.goo.gl/k6NXLm3XQ3AbEptC6" target="_blank" class="venue-button">Open in Maps →</a>
+                    <a href="https://maps.app.goo.gl/k6NXLm3XQ3AbEptC6" target="_blank" class="venue-button">Open in Google Maps →</a>
                 </div>
-            <div class="venue-card">
+            <div class="venue-card" id="venue-greenpark">
                 <iframe class="venue-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7612.984627532231!2d78.4512333768678!3d17.43613520139567!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb90a6ae789aab%3A0x9d2b3c7a1c90042d!2sHotel%20Greenpark%2C%20Hyderabad!5e0!3m2!1sen!2sus!4v1779510117738!5m2!1sen!2sus"></iframe>
                 <div class="venue-info">
                     <h3 class="venue-title">Wedding</h3>
                     <p class="venue-text">Secunderabad, Telengana<br>India</p>
-                    <a href="https://maps.app.goo.gl/htmufFpxsUGe9a72A" target="_blank" class="venue-button">Open in Maps →</a>
+                    <a href="https://maps.app.goo.gl/htmufFpxsUGe9a72A" target="_blank" class="venue-button">Open in Google Maps →</a>
                 </div>
             </div>
         </section>
@@ -1611,6 +1611,66 @@
         }
 
         window.addEventListener('load', init);
+
+    function scrollToVenue(id) {
+
+        const venue = document.getElementById(id);
+
+        if (!venue) return;
+
+        venue.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+
+        venue.classList.remove("venue-highlight");
+
+        // Restart animation
+        void venue.offsetWidth;
+
+        venue.classList.add("venue-highlight");
+
+        setTimeout(() => {
+            venue.classList.remove("venue-highlight");
+        }, 1800);
+    }
+
+    .venue-highlight{
+
+    animation: venueGlow 1.8s ease;
+
+}
+
+@keyframes venueGlow{
+
+    0%{
+
+        transform:scale(1);
+
+        box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+    }
+
+    35%{
+
+        transform:scale(1.03);
+
+        box-shadow:
+            0 0 0 8px rgba(196,147,63,.12),
+            0 25px 70px rgba(196,147,63,.35);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+        box-shadow:0 20px 60px rgba(0,0,0,.15);
+
+    }
+
+}
+
     </script>
 </body>
 </html>
